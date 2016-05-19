@@ -40,11 +40,4 @@ class GuessTest < Minitest::Test
     assert_equal "Incorrect.", guess.feedback
   end
 
-  def test_response_can_be_any_case
-    card = Card.new("What is the capital of Alaska?", "Juneau")
-    guess = Guess.new("jUnEAU", card)
-
-    assert_equal "Correct!", guess.feedback
-  end
-
 end
