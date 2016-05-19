@@ -40,7 +40,7 @@ class RoundTest < Minitest::Test
     deck = Deck.new([card_1, card_2])
     round = Round.new(deck)
 
-    assert_instance_of Array, round.record_guess("Juneau")
+    assert_instance_of Fixnum, round.record_guess("Juneau")
     assert_equal 1, round.guesses.count
     assert_equal "Correct!", round.guesses.first.feedback
   end
@@ -50,7 +50,7 @@ class RoundTest < Minitest::Test
     deck = Deck.new([card_1])
     round = Round.new(deck)
 
-    assert_instance_of Array, round.record_guess("Canada")
+    assert_instance_of Fixnum, round.record_guess("Canada")
     assert_equal 1, round.guesses.count
     assert_equal "Incorrect.", round.guesses.first.feedback
   end

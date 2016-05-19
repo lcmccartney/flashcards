@@ -4,7 +4,7 @@ require "./lib/deck"
 require "./lib/round"
 require "./lib/card_generator"
 
-puts "Enter the name of the deck you wish to use:"
+puts "Enter the name of the deck you wish to use: (ex. cards)"
 filename = gets.chomp + ".txt"
 
 cards = CardGenerator.new(filename).cards

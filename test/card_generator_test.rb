@@ -24,9 +24,14 @@ class CardGeneratorTest < Minitest::Test
     assert_instance_of Card, card_generator.cards.first
   end
 
-  def test_it_returns_question_from_card_element
-
+  def test_it_returns_question_from_card_object
+    card_generator = CardGenerator.new('cards.txt')
+    assert_equal "Nariyal is the Indian term for which nut?", card_generator.cards.last.question
   end
 
-      # cards = CardGenerator.new(filename).cards
+  def test_it_returns_answer_from_card_object
+    card_generator = CardGenerator.new('cards.txt')
+    assert_equal "kenya", card_generator.cards.first.answer
+  end
+
 end

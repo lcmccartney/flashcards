@@ -36,8 +36,15 @@ class GuessTest < Minitest::Test
   def test_it_lets_user_know_they_have_a_wrong_answer
     card = Card.new("Which planet is closest to the sun?", "Mercury")
     guess = Guess.new("Saturn", card)
-    
+
     assert_equal "Incorrect.", guess.feedback
+  end
+
+  def test_response_can_be_any_case
+    card = Card.new("What is the capital of Alaska?", "Juneau")
+    guess = Guess.new("jUnEAU", card)
+
+    assert_equal "Correct!", guess.feedback
   end
 
 end
