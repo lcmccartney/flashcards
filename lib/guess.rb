@@ -8,7 +8,7 @@ class Guess
   end
 
   def correct?
-    @card.answer == @response
+    @card.answer.downcase == @response.downcase
   end
 
   def feedback
@@ -18,5 +18,5 @@ class Guess
       "Incorrect."
     end
   end
-  
+
 end
