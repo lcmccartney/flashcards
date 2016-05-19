@@ -19,6 +19,7 @@ class Round
       @number_correct += 1
     end
     @guesses << guess
+    @card_number += 1
   end
 
   def count
@@ -26,7 +27,7 @@ class Round
   end
 
   def percent_correct
-    (@number_correct/@guesses.count.to_i) * 100
+    (@number_correct.to_f/@guesses.count) * 100
   end
 
   def start
@@ -42,7 +43,6 @@ Welcome! You are playing with #{deck.count} cards.
       """
       record_guess(gets.chomp)
       puts @guesses.last.feedback
-      @card_number += 1
     end
 
     puts """

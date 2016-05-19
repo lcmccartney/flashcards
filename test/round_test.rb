@@ -58,13 +58,13 @@ class RoundTest < Minitest::Test
   def test_it_records_number_of_correct_guesses
     card_1 = Card.new("What is the capital of Alaska?", "Juneau")
     card_2 = Card.new("Approximately how many miles are in one astronomical unit?", "93,000,000")
-    card_3 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars")
+    card_3 = Card.new("What is the 3rd planet from the sun?", "Earth")
     deck = Deck.new([card_1, card_2, card_3])
     round = Round.new(deck)
 
     round.record_guess("Juneau")
     round.record_guess("93,000,000")
-    round.record_guess("Venus")
+    round.record_guess("Mars")
 
     assert_equal "Correct!", round.guesses.first.feedback
     assert_equal "Incorrect.", round.guesses.last.feedback
